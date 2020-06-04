@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>scrollTopMenu</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script>
+      window.onload = function () {
+        var oNav = $(".nav");
+        document.onscroll = function (e) {
+          console.log(window.scrollY);
+          if (window.scrollY >= 850) {
+            oNav.addClass("sticky");
+          } else {
+            oNav.removeClass("sticky");
+          }
+        };
+      };
+    </script>
+    <style>
+      div {
+        text-align: center;
+        vertical-align: middle;
+      }
+      div.header {
+        height: 200px;
+        line-height: 200px;
+      }
+      div.nav {
+        /* position: sticky; */
+        /* top: 50px; */
+        /* bottom: 50px; */
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: #000;
+        color: #fff;
+      }
+      div.sticky {
+        position: fixed;
+        top: 0;
+      }
+      .cloths, .shoes, .toys {
+        height: 600px;
+        line-height: 600px;
+      }
+      .header, .shoes {
+        background: #666;
+      }
+      .cloths, .toys {
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">header</div>
+    <div class="nav">nav<ul></ul></div>
+    <div class="cloths">cloths</div>
+    <div class="shoes">shoes</div>
+    <div class="toys">toys</div>
+  </body>
+</html>

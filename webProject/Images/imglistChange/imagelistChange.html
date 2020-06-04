@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>imglistChange</title>
+		<link rel="stylesheet" href="../../base.css" />
+		<script src="../../base.js"></script>
+		<script>
+			window.onload = function () {
+				var oCon = $(".container"),
+						imgListCon = $(".img-list"),
+						imgListConLeft = 0,
+						imgLists = imgListCon.$$("li"),
+						imgListLen = imgLists.length,
+						imgListConWidth = (imgListLen + 1) * 170;
+
+				imgListConWidth < 510 && (imgListConWidth = 510);
+				imgListCon.style.width = imgListConWidth + "px";
+
+				oCon.onclick = function (e) {
+					console.log(e.target.tagName);
+					if (e.target.tagName === "IMG" && e.target.className === "dirl") {
+						imgListConLeft -= 510;
+						if (imgListConLeft < 0) {
+							alert("左边到头了");
+							imgListConLeft = 0;
+						}
+					} else if (e.target.tagName === "IMG" && e.target.className === "dirr") {
+						imgListConLeft += 510;
+						if (imgListConLeft >= imgListConWidth) {
+							alert("右边到头了");
+							imgListConLeft -= 510
+						}
+					};
+					imgListCon.style.left = -imgListConLeft + "px";
+				};
+			};
+		</script>
+		<style>
+			body {
+				font-size: 12px;
+				text-align: center;
+			}
+			a {
+				color: #000;
+				font-size: 12px;
+			}
+			div.wrap {
+				margin: 50px auto;
+			}
+			div.container {
+				position: relative;
+				margin: 0 auto;
+				border: 1px dotted rgb(255, 0, 119);
+				width: 710px;
+			}
+			div.dir {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				height: 71px;
+			}
+			div.dir.dirl  {
+				left: 0;
+			}
+			div.dir.dirr {
+				right: 0;
+			}
+			div.content {
+				position: relative;
+				margin: 0 auto;
+				padding: 20px 0;
+				width: 510px;
+				height: 215px;
+				overflow: hidden;
+			}
+			ul.img-list {
+				position: absolute;
+				left: 0;
+				width: 510px;
+				transition: left 500ms ease-in-out;
+			}
+			ul.img-list li {
+				float: left;
+				margin: 0 10px;
+				width: 150px;
+			}
+			ul.img-list > li > p {
+				line-height: 30px;
+			}
+			span.price {
+				font-weight: bold;
+				color: #f00;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="container">
+				<div class="dir dirl"><img class="dirl" src="images/dirl.jpg" alt="" /></div>
+				<div class="content">
+					<ul class="img-list">
+						<li>
+							<img src="images/rec_img1.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img2.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img3.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img4.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img5.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img6.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img7.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img8.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img9.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img10.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img4.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img6.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img9.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+						<li>
+							<img src="images/rec_img2.jpg" alt="">
+							<p class="title">
+								<a href="#">马尔代夫泰姬珊瑚四晚..</a>
+							</p>
+							<p>抢购价： <span class="price">13760元</span></p>
+						</li>
+					</ul>
+				</div>
+				<div class="dir dirr"><img class="dirr" src="images/dirr.jpg" alt="" /></div>
+			</div>
+		</div>
+	</body>
+</html>

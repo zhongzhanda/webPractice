@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>hoverInfo</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script>
+      
+    </script>
+    <style>
+      @keyframes open {
+        0% {
+          z-index: 10;
+          width: 0;
+          height: 0;
+        }
+        50% {
+          z-index: 10;
+          width: 150px;
+          height: 98px;
+        }
+        51% {
+          z-index: 10;
+          width: 150px;
+          height: 98px;
+          border: 2px solid #69f;
+          left: 162px;
+          top: -2px;
+        }
+        100% {
+          z-index: 10;
+          width: 300px;
+          height: 196px;
+          border: 2px solid #69f;
+          left: 162px;
+          top: -2px;
+        }
+      }
+      ul.container {
+        margin: 50px auto;
+        width: 744px;
+      }
+      ul.container li {
+        position: relative;
+        float: left;
+        margin: 10px;
+        border: 1px solid #666;
+        width: 164px;
+        height: 98px;
+      }
+      /* ul.container li::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 100%;
+        width: 1px;
+        height: 100px;
+        background: #666;
+        transition: height 5000ms linear;
+      } */
+      ul.container div.img {
+        position: absolute;
+        z-index: 2;
+      }
+      ul.container div.info {
+        position: absolute;
+        /* z-index: 2; */
+        top: -1px;
+        left: 163px;
+        border: 1px solid #666;
+        width: 0px;
+        height: 0px;
+        background: #fff;
+        overflow: hidden;
+        /* transition: height 500ms linear,
+                    width 500ms linear; */
+                    /* border 250ms linear 250ms; */
+      }
+      div.info > div {
+        padding: 10px;
+      }
+      div.info h3,
+      div.info dt,
+      div.info dd {
+        white-space: nowrap;
+      }
+      /* ul.container li:hover::after {
+        height: 0px;
+        animation: after 500ms linear;
+      } */
+      ul.container li:hover {
+        border: 2px solid #69f;
+        margin: 9px;
+        transition: border 0ms linear 168ms,
+                    margin 0ms linear 168ms;
+      }
+      ul.container li:hover div.info {
+        animation: open 500ms linear;
+        border: 2px solid #69f;
+        z-index: 10;
+        width: 300px;
+        height: 196px;
+        left: 162px;
+        top: -2px;
+        transition: left 0ms linear 500ms,
+                    top 0ms linear 500ms,
+                    border 0ms linear 500ms,
+                    width 0ms linear 500ms,
+                    height 0ms linear 500ms;
+
+      }
+      ul.container li:hover div.img {
+        z-index: 20;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <ul class="container">
+        <li>
+          <div class="img"><img src="img/1.jpg" alt=""></div>
+          <div class="info">
+            <div>
+              <h3>详细信息</h3>
+              <dl>
+                <dt>详细信息描述</dt>
+                <dd>详细信息描述1</dd>
+                <dd>详细信息描述2</dd>
+                <dd>详细信息描述3</dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/2.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/3.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/4.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/5.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/6.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/7.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/8.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/9.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/10.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/11.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <div class="img"><img src="img/12.jpg" alt=""></div>
+          <div class="info">
+            <h3>详细信息</h3>
+            <dl>
+              <dt>详细信息描述</dt>
+              <dd>详细信息描述1</dd>
+              <dd>详细信息描述2</dd>
+              <dd>详细信息描述3</dd>
+            </dl>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

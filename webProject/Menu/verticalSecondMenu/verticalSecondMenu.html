@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>verticalSecondMenu</title>
+    <link rel="stylesheet" href="../../base.css" />
+    <script src="../../base.js"></script>
+    <script>
+      window.onload = function () {
+        var dlList = $$(".second-menu"),
+            itemList = $$(".menu-item"),
+            menu = $(".menu"),
+            index;
+        for (let i = 0; i < dlList.length; i++) {
+          itemList[i].index = i;
+          dlList[i].count = dlList[i].childElementCount - 1;
+        }
+        for (let j = 0; j < itemList.length; j++) {
+          itemList[j].onclick = function (e) {
+            this.style.height = 50 + dlList[this.index].count * 41 + "px";
+            if (typeof index === "number") {
+              itemList[index].style.height = "50px";
+            }
+            if (index === this.index) {
+              index = null;
+            } else {
+            index = this.index;
+            }
+          };
+        }
+      };
+    </script>
+    <style>
+      .menu {
+        width: 232px;
+        color: #fff;
+      }
+      .menu img {
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+      .menu > dt{
+        line-height: 70px;
+        text-align: center;
+        font-size: 50px;
+        background: #333;
+      }
+      .menu > dd {
+        border-top: 1px solid #000;
+        height: 50px;
+        overflow: hidden;
+        transition: height 500ms linear;
+      }
+      .second-menu dt {
+        padding-left : 50px;
+        line-height: 50px;
+        background: #333;
+      }
+      .second-menu dd {
+        padding-left: 70px;
+        border-top: 1px solid #000;
+        line-height: 40px;
+        background: #999;
+      }
+      .second-menu dd:hover {
+        background: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <dl class="menu">
+        <dt>目录</dt>
+        <dd class="menu-item">
+          <dl class="second-menu">
+            <dt><img src="images/text_block.png" alt=""><span>核心</span></dt>
+            <dd><img src="images/folder.png" alt=""><span>网站栏目管理</span></dd>
+            <dd><img src="images/folder.png" alt=""><span>所有档案列表</span></dd>
+            <dd><img src="images/html.png" alt=""><span>等审核的档案</span></dd>
+            <dd><img src="images/html.png" alt=""><span>我发布的文档</span></dd>
+            <dd><img src="images/html.png" alt=""><span>评论管理</span></dd>
+            <dd><img src="images/html.png" alt=""><span>内容回收站</span></dd>
+          </dl>
+        </dd>
+        <dd class="menu-item">
+          <dl class="second-menu">
+            <dt><img src="images/pen.png" alt=""><span>模板管理</span></dt>
+            <dd><img src="images/folder.png" alt=""><span>网站栏目管理</span></dd>
+            <dd><img src="images/folder.png" alt=""><span>所有档案列表</span></dd>
+            <dd><img src="images/html.png" alt=""><span>等审核的档案</span></dd>
+          </dl>
+        </dd>
+        <dd class="menu-item">
+          <dl class="second-menu">
+            <dt><img src="images/reload.png" alt=""><span>生成</span></dt>
+            <dd><img src="images/folder.png" alt=""><span>网站栏目管理</span></dd>
+            <dd><img src="images/folder.png" alt=""><span>所有档案列表</span></dd>
+            <dd><img src="images/html.png" alt=""><span>等审核的档案</span></dd>
+          </dl>
+        </dd>
+        <dd class="menu-item">
+          <dl class="second-menu">
+            <dt><img src="images/setting.png" alt=""><span>栏目文件</span></dt>
+            <dd><img src="images/folder.png" alt=""><span>网站栏目管理</span></dd>
+            <dd><img src="images/folder.png" alt=""><span>所有档案列表</span></dd>
+            <dd><img src="images/html.png" alt=""><span>等审核的档案</span></dd>
+          </dl>
+        </dd>
+      </dl>
+    </div>
+  </body>
+</html>

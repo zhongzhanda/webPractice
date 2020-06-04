@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>opacityCarousel</title>
+    <link rel="stylesheet" href="../../base.css" />
+    <script src="../../base.js"></script>
+    <script>
+      function AutoPlay (element) {
+        this.init(element);
+      };
+      AutoPlay.prototype = {
+        init: function (element) {
+          let oThis = this;
+          this.content = element;
+          this.picCon = this.content.$(".pic");
+          this.pics = this.picCon.$$("li");
+          this.icoCon = this.content.$(".ico");
+          this.icos = this.icoCon.$$("li");
+          this.len = this.pics.length;
+          this.index = 0;
+          this.timer = null;
+
+          for (let i = 0; i < this.len; i++) {
+            this.icos[i].index = i;
+          }
+
+
+          this.content.onmouseover = function (e) {
+            if (oThis.timer !== null) {
+              clearInterval(oThis.timer);
+              oThis.timer = null;
+            }
+
+            oThis.icoCon.onclick = function (e) {
+              if (e.target.tagName === "LI") {
+                oThis.next(e.target.index);
+              }
+            };
+          };
+
+          this.content.onmouseout = function (e) {
+            if (oThis.timer === null) {
+              oThis.timer = oThis.auto();
+            }
+          };
+
+          this.timer = this.auto();
+        },
+
+        auto: function () {
+          let oThis = this;
+          return setInterval(function () {
+            console.log(oThis.timer);
+            oThis.next();
+          }, 2000);
+        },
+        
+        next: function (i) {
+          let oThis = this;
+          if (i === undefined) {
+            i = this.index + 1;
+            (i >= this.len) && (i = 0);
+          }
+
+          oThis.pics[oThis.index].style.opacity = "0";
+          oThis.pics[i].style.display = "block";
+          setTimeout(function () {
+            oThis.pics[oThis.index].style.display = "none";
+            oThis.pics[oThis.index].style.zIndex = "0";
+            oThis.pics[i].style.zIndex = "1";
+            oThis.pics[i].style.opacity = "1";
+            oThis.icos[oThis.index].removeClass("active");
+            oThis.icos[i].addClass("active");
+            
+            oThis.index = i;
+            
+          }, 200);
+
+        },
+      };
+      
+      window.onload = function () {
+        var content = $(".content");
+
+        new AutoPlay(content);
+      };
+    </script>
+    <style>
+      div.content {
+        position: relative;
+        margin: 50px auto;
+        border: 10px solid #444;
+        width: 590px;
+        overflow: hidden;
+      }
+      ul.pic {
+        position: relative;
+        height: 250px;
+      }
+      ul.pic li {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 200ms linear;
+      }
+      ul.pic li:first-child {
+        display: block;
+        z-index : 1; 
+        opacity: 1;
+      }
+      ul.pic img {
+        display: block;
+        width: 590px;
+        height: 250px;
+      }
+      ul.ico {
+        position: absolute;
+        bottom:  10px;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        margin: auto;
+        width: 112px;
+      }
+      ul.ico li {
+        cursor: pointer;
+        float: left;
+        margin-right: 8px;
+        border-radius: 6px;
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, .7);
+      }
+      ul.ico li:last-child {
+        margin-right: 0;
+      }
+      ul.ico li.active {
+        background: rgba(255, 120, 0, .7);
+      }
+
+      div.test {
+        display: none;
+        width: 100px;
+        height: 100px;
+        background: #f00;
+        opacity: 0;
+        transition: opacity 500ms linear;
+      }
+      div.test:hover {
+        display: block;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <ul class="pic">
+          <li style="z-index: 1;"><img src="images/img1.jpg" alt="" /></li>
+          <li><img src="images/img2.jpg" alt="" /></li>
+          <li><img src="images/img3.jpg" alt="" /></li>
+          <li><img src="images/img4.jpg" alt="" /></li>
+          <li><img src="images/img5.jpg" alt="" /></li>
+          <li><img src="images/img6.jpg" alt="" /></li>
+        </ul>
+        <ul class="ico clearfix">
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="test"></div>
+  </body>
+</html>

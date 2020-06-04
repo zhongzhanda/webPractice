@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>randomImages</title>
+		<link rel="stylesheet" href="../../base.css" />
+		<script src="../../base.js"></script>
+		<script>
+			window.onload = function () {
+				var lists = $$(".item"),
+						len = lists.length,
+						imgList = $$("img"),
+						pList = $(".list").$$("p"),
+						imgArr = [1, 2, 3, 4, 5, 1],
+						textArr = ["1.图片一", "2.图片二", "3.图片三", "4.图片四", "5.图片五", "6.图片六"],
+						btn01 = $$("button")[0],
+						btn02 = $$("button")[1],
+						inorder = true,
+						ulist = [0, 1, 2, 3, 4, 5];
+				
+				btn01.onclick = function (e) {
+					if (inorder) {
+						inorder = false;
+						for (let i = 0; i < len; i++) {
+							imgList[i].src = "ads/" + imgArr[len -1 - i] + ".jpg";
+							pList[i].innerHTML = textArr[len - 1 - i];
+						}
+					} else {
+						inorder = true;
+						for (let i = 0; i < len; i++) {
+							imgList[i].src = "ads/" + imgArr[i] + ".jpg";
+							pList[i].innerHTML = textArr[i];
+						}
+					}
+				};				
+
+				btn02.onclick = function (e) {
+					inorder = false;
+					let temp = 0;
+					for (let i = 0; i < len; i++) {
+						let num = Number.parseInt(Math.random() * 6);
+						if (i !== num) {
+							temp = ulist[i];
+							ulist[i] = ulist[num];
+							ulist[num] = temp;
+						}
+					}
+					for (let i = 0; i < len; i++) {
+						imgList[i].src = "ads/" + imgArr[ulist[i]] + ".jpg";
+						pList[i].innerHTML = textArr[ulist[i]];
+					}
+				};
+			};
+		</script>
+		<style>
+			p {
+				margin-top: 50px;
+				text-align: center;
+			}
+			.button button {
+				cursor: pointer;
+				margin: 0 10px;
+				padding: 5px 10px;
+				background: #59f;
+				color: #fff;
+			}
+			.list {
+				margin: 50px auto;
+				width: 960px;
+			}
+			.item {
+				float: left;
+				margin: 10px;
+				width: 300px;
+			}
+			.item img {
+				width: 300px;
+				height: 200px;
+			}
+			.item p {
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<p class="button"><button>顺序排列</button><button>随机</button></p>
+			<ul class="list">
+				<li class="item">
+					<img src="ads/1.jpg" alt="" />
+					<p>1.图片一</p>
+				</li>
+				<li class="item">
+					<img src="ads/2.jpg" alt="" />
+					<p>2.图片二</p>
+				</li>
+				<li class="item">
+					<img src="ads/3.jpg" alt="" />
+					<p>3.图片三</p>
+				</li>
+				<li class="item">
+					<img src="ads/4.jpg" alt="" />
+					<p>4.图片四</p>
+				</li>
+				<li class="item">
+					<img src="ads/5.jpg" alt="" />
+					<p>5.图片五</p>
+				</li>
+				<li class="item">
+					<img src="ads/1.jpg" alt="" />
+					<p>6.图片六</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

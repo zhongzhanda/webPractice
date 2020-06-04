@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>checkboxChoose</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script>
+      // window.onload = function () {
+      //   var sA = $(".selectAll"),
+      //       sSpan = $("#checkbox").$("span"),
+      //       sInvert = $("#invert"),
+      //       cbLs = $$(".items"),
+      //       cbDd = $("#checkbox").$("dd");
+
+      //   function checkSpan () {
+      //     if (sA.checked) {
+      //       addClass(sSpan, "active");
+      //     } else {
+      //       removeClass(sSpan, "active");
+      //     }
+      //   };
+
+
+      //   function checkSelectAll () {
+      //     let count = 0;
+      //     for (let i = 0; i < cbLs.length; i++) {
+      //       cbLs[i].checked && count++;
+      //     }
+      //     if (count === cbLs.length) {
+      //       sA.checked = true;
+      //     } else {
+      //       sA.checked = false;
+      //     }
+      //     checkSpan();
+      //   };
+
+
+      //   sA.onclick = function () {
+      //     for (let i = 0; i < cbLs.length; i++) {
+      //       cbLs[i].checked = sA.checked;
+      //     }
+      //     checkSpan();
+      //   };
+
+      //   sInvert.onclick = function () {
+      //     for (let i = 0; i < cbLs.length; i++) {
+      //       cbLs[i].checked = !cbLs[i].checked;
+      //     }
+      //     checkSelectAll();
+      //   };
+
+      //   cbDd.onclick = function (e) {
+      //     if (e.target.tagName === "INPUT") {
+      //       checkSelectAll();
+      //     }
+      //   };
+        
+      // }; 
+      /*以上是普通的解法，以下使用类的方式*/
+      function SelectBox (element) {
+        this.init(element);
+      };
+      SelectBox.prototype = {
+        init: function (element) {
+          let oThis = this;
+          this.selectBox = element;
+          this.sA = this.selectBox.$(".selectAll");
+          this.sSpan = this.selectBox.$("span");
+          this.sInvert = this.selectBox.$("#invert");
+          this.sbLs = this.selectBox.$$(".items");
+          this.sbDd = this.selectBox.$("dd");
+
+          this.sA.onclick = function () {
+            for (let i = 0; i < oThis.sbLs.length; i++) {
+              oThis.sbLs[i].checked = oThis.sA.checked;
+            }
+            oThis.checkSpan();
+          };
+
+          this.sInvert.onclick = function () {
+            for (let i = 0; i < oThis.sbLs.length; i++) {
+              oThis.sbLs[i].checked = !oThis.sbLs[i].checked;
+            }
+            oThis.checkSelectAll();
+          };
+          this.sbDd.onclick = function (e) {
+            if (e.target.tagName === "INPUT") {
+              oThis.checkSelectAll();
+            }
+          };
+        },
+        checkSelectAll: function () {
+          let count = 0;
+          for (let i = 0; i < this.sbLs.length; i++) {
+            this.sbLs[i].checked && count++;
+          }
+          if (count === this.sbLs.length) {
+            this.sA.checked = true;
+          } else {
+            this.sA.checked = false;
+          }
+          this.checkSpan();
+        },
+        checkSpan: function () {
+          if (this.sA.checked) {
+            addClass(this.sSpan, "active");
+          } else {
+            removeClass(this.sSpan, "active");
+          }
+        },
+      };
+
+      window.onload = function () {
+        var selectBox = $("#checkbox");
+        new SelectBox(selectBox);
+      };
+    </script>
+    <style>
+      #checkbox  span {
+        display: none;
+      }
+      #checkbox  span.active {
+        display: inline;
+      }
+      label.selectAll {
+        display: inline-block;
+        margin-right: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <dl id="checkbox">
+        <dt>
+          <label>
+            <input type="checkbox" name="" class="selectAll">
+            全<span>不</span>选
+          </label>
+          <a href="javascript:;" id="invert">反选</a>
+        </dt>
+        <dd>
+          <ul>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项1</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项2</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项3</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项4</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项5</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项6</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项7</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项8</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项9</label></li>
+            <li><label class="select-item"><input type="checkbox" name="" id="" class="items">选项10</label></li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </body>
+</html>

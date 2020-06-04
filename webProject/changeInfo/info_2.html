@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>info</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script src="info_2.js"></script>
+    <style>
+      #container {
+        margin: 50px auto;
+        width: 1000px;
+      }
+
+      #nav {
+        border-bottom: 3px solid #f60;
+      }
+      #nav>span {
+        cursor: pointer;
+        display: inline-block;
+        width: 100px;
+        line-height: 30px;
+        text-align: center;
+      }
+      #nav>span.active {
+        background: #f60;
+      }
+
+      ul.list {
+        display: none;
+      }
+      ul.list:first-of-type {
+        display: block;
+      }
+
+      li.item {
+        float: left;
+        margin-top: 10px;
+        width: 100%;
+        height: 20px;
+      }
+      /* li.item::before,
+      li.item::after {
+        content: "";
+        display: table;
+        clear: both;
+      } */
+      li.item>a {
+        float: left;
+        margin-right: 10px;
+        line-height: 20px;
+      }
+      li.item>div.info {
+        display: none;
+        float: left;
+        position: relative;
+        border: 2px solid #f60;
+        padding: 20px;
+        background: #fff;
+      }
+      li.item>a:hover+div.info {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="nav"><span class="active">前端</span><span>后端</span></div>
+      <ul class="list">
+        <li class="item">
+          <a href="javascript:;">前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">网站前端页面设计</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">高级web前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">HTML5前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">网站前端设计</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">诚招web前端开发工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">web前端DIV+CSS</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">前端设计</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">招聘 前端页面工作者</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">页面前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">高级web前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">HTML5前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">前端工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">网站前端页面设计</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p>
+              <span>2人</span>
+              <sapn>北京</sapn>
+            </p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+      </ul>
+      <ul class="list">
+        <li class="item">
+          <a href="javascript:;">PHP工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p><span>2人</span><span>北京</span></p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">诚招java开发工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p><span>2人</span><span>北京</span></p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">java工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p><span>2人</span><span>北京</span></p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">.net工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p><span>2人</span><span>北京</span></p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">招聘php程序员</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p><span>2人</span><span>北京</span></p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <a href="javascript:;">PHP高级工程师</a>
+          <div class="info">
+            <h2>xxxx有限公司</h2>
+            <p><span>2人</span><span>北京</span></p>
+            <p><span>不限</span><span>不限</span></p>
+            <p><span>面议</span><span>2017-5-14</span></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

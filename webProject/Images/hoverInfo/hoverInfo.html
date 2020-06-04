@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>hoverInfo</title>
+		<link rel="stylesheet" href="../../base.css" />
+		<script src="../../base.js"></script>
+		<script>
+			
+		</script>
+		<style>
+			div.container ul {
+				margin: 30px auto;
+				width: 984px;
+			}
+			div.container li {
+				position: relative;
+				float: left;
+				margin: 2px;
+				width: 160px;
+				height: 120px;
+				overflow: hidden;
+			}
+			div.container li:first-of-type,
+			div.container li:nth-of-type(2),
+			div.container li:nth-of-type(3) {
+				width: 324px;
+				height: 244px;
+			}
+			div.container div.mask {
+				position: absolute;
+				left: 0;
+				bottom: -40px;
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background: rgba(0,0,0, .5);
+				transition: bottom .5s ease-in-out;
+			}
+			div.container div.mask img {
+				vertical-align: middle;
+			}
+			div.container li:hover div.mask {
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li>
+					<img src="images/pic1.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic2.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic3.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic4.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic5.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic6.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic7.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic8.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+				<li>
+					<img src="images/pic9.jpg" alt="">
+					<div class="mask"><img src="images/button.png" alt=""></div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

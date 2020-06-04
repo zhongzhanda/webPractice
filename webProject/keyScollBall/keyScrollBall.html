@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>keyScrollBall</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script>
+          /*
+           * left: 37
+           * up: 38
+           * right: 39 
+           * down: 40
+           * shift: 16
+           * ctrl: 17
+           * e.ctrlKey
+           * e.shiftKey
+          */
+      window.onload = function () {
+        var ball = $("#ball"),
+            left = 50,
+            top = 50,
+            maxL = 1500,
+            minL = 0,
+            maxT = 800,
+            minT = 0,
+            speed = 10,
+            // funcKey = -1,   // 0代表shift，1代表ctrl
+            // hDir = -1,    // 0代表left，1代表right
+            // vDir = -1,    // 0代表up，1代表down
+            leftKey = false,
+            upKey = false,
+            rightKey = false,
+            downKey = false,
+            timer = null;
+        document.onkeydown = function (e) {
+          let c = e.keyCode;
+
+          console.log(e.keyCode);
+
+          // 方式三：
+          if (c === 37) {
+            if (rightKey) {
+              return false;
+            }
+            leftKey = true;
+          } else if (c === 38) {
+            if (downKey) {
+              return false;
+            }
+            upKey = true;
+          } else if (c === 39) {
+            if (leftKey) {
+              return false;
+            }
+            rightKey = true;
+          } else if (c === 40) {
+            if (upKey) {
+              return false;
+            }
+            downKey = true;
+          } else if (c === 16) {
+            if (e.ctrlKey) {
+              return false;
+            }
+            speed = 40;
+          } else if (c === 17) {
+            if (e.shiftKey) {
+              return false;
+            }
+            speed = 10;
+          }
+
+
+          // 方式二：
+          // if (c === 37 && rightKey === false) {
+          //   leftKey = true;
+          // } else if (c === 38 && downKey === false) {
+          //   upKey = true;
+          // } else if (c === 39 && leftKey === false) {
+          //   rightKey = true;
+          // } else if (c === 40 && upKey === false) {
+          //   downKey = true;
+          // } else if (c === 16 && e.ctrlKey === false) {
+          //   speed = 40;
+          // } else if (c === 17 && e.shiftKey === false) {
+          //   speed = 10;
+          // }
+
+
+          //  方式一：
+          // switch (e.keyCode) {
+          //   case 37: 
+          //     hDir = 0;
+          //     break;
+          //   case 39: 
+          //     hDir = 1;
+          //     break;
+          //   case 38:
+          //     vDir = 0;
+          //     break;
+          //   case 40:
+          //     vDir = 1;
+          //     break;
+          //   case 16:
+          //     if (funcKey === -1) {
+          //       funcKey = 0;
+          //       speed = 4;
+          //     }
+          //     break;
+          //   case 17:
+          //     if (funcKey === -1) {
+          //       funcKey = 1;
+          //       speed = 1;
+          //     }
+          //     break;
+          //   default: 
+          //     return;
+          // }
+          // if (hDir > -1 || vDir > -1 && timer === null) {
+          //   timer = setInterval(move, 200);
+          // }
+        };
+        document.onkeyup = function (e) {
+          let c = e.keyCode;
+
+          // 方式三：
+            if (c === 16 && e.ctrlKey === false) {
+              speed = 20;
+            } else if (c === 17 && e.shiftKey === false) {
+              speed = 20;
+            } else if (c === 37) {
+              leftKey = false;
+            } else if (c === 38) {
+              upKey = false;
+            } else if (c === 39) {
+              rightKey = false;
+            } else if (c === 40 ){
+              downKey = false;
+            }
+            
+            console.log("keyup:  " + leftKey + "   " + rightKey);
+
+
+
+          // 方式二：
+          // if (c === 16 && e.ctrlKey === false) {
+          //   speed = 20;
+          // } else if (c === 17 && e.shiftKey === false) {
+          //   speed = 20;
+          // } else if (c === 37) {
+          //   leftKey = false;
+          // } else if (c === 38) {
+          //   upKey = false;
+          // } else if (c === 39) {
+          //   rightKey = false;
+          // } else if (c === 40 ){
+          //   downKey = false;
+          // }
+
+          // 方式一：
+          // switch (e.keyCode) {
+          //   case 37: 
+          //     if (hDir = 0) {
+          //       hDir = -1;
+          //     }
+          //     break;
+          //   case 39: 
+          //     if (hDir = 1) {
+          //       hDir = -1;
+          //     }
+          //     break;
+          //   case 38:
+          //     if (vDir = 0) {
+          //       vDir = -1;
+          //     }
+          //     break;
+          //   case 40:
+          //     if (vDir = 1) {
+          //       vDir = -1;
+          //     }
+          //     break;
+          //   case 16:
+          //     if (funcKey === 0) {
+          //       funcKey = -1;
+          //       speed = 2;
+          //     }
+          //     break;
+          //   case 17:
+          //     if (funcKey === 1) {
+          //       funcKey = -1;
+          //       speed = 2;
+          //     }
+          //     break;
+          //   default: 
+          //     return;
+          // }
+          // if (hDir === -1 && vDir === -1) {
+          //   clearInterval(timer);
+          //   timer = null;
+          // }
+        };
+
+        function move () {
+          if (leftKey) {
+            left -= speed;
+            (left < minL) && (left = minL);
+          } else if (rightKey) {
+            left += speed;
+            (left > maxL) && (left = maxL);
+          }
+          if (upKey) {
+            top -= speed;
+            (top < minT) && (top = minT);
+          } else if (downKey) {
+            top += speed;
+            (top > maxT) && (top = maxT);
+          }
+          ball.style.left = left + "px";
+          ball.style.top = top + "px";
+        //   if (hDir > -1) {
+        //     if (hDir = 0) {
+        //       left -= speed;
+        //     } else if (hDir = 1) {
+        //       left += speed;
+        //     }
+        //     (left > maxL) && (left = maxL);
+        //     (left < minL) && (left = minL);
+        //     ball.style.left = left + "px";
+        //   }
+        //   if (vDir > -1) {
+        //     if (vDir = 0) {
+        //       top -= speed;
+        //     } else if (vDir = 1) {
+        //       top += speed;
+        //     }
+        //     (top > maxT) && (top = maxT);
+        //     (top < minT) && (top = minT);
+        //     ball.style.top = top + "px";
+        //   }
+        //   console.log(hDir + "   " + vDir);
+        //   if (hDir === -1 && vDir === -1) {
+        //     clearInterval(timer);
+        //     timer = null;
+        //   }
+        // };
+        };
+        timer = setInterval(function () {
+          move();
+        }, 100);
+      };
+    </script>
+    <style>
+      #ball {
+        position: fixed;
+        left: 50px;
+        top: 50px;
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+        background: #000;
+        transition: top 100ms linear,
+                    left 100ms linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ball"></div>
+  </body>
+</html>

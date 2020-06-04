@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>clock</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script src="clock.js"></script>
+    <style>
+      #clock {
+        float: left;
+        padding: 40px;
+        background: #000;
+      }
+      img {
+        vertical-align: middle;
+        width: 25px;
+        height: 36px;
+        position: relative;
+        top: 0;
+        transition: height 200ms ease-in-out,
+                    top 200ms ease-in-out;
+      }
+      p.content {
+        vertical-align: middle;
+      }
+      .content span {
+        line-height: 36px;
+        vertical-align: middle;
+        font-size: 20px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="clock">
+        <p class="content">
+          <img>
+          <img>
+          <span>:</span>
+          <img>
+          <img>
+          <span>:</span>
+          <img>
+          <img>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

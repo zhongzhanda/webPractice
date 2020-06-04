@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>language</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script>
+      
+    </script>
+    <style>
+      ul.nav {
+        width: 1080px;
+        margin: 10px auto;
+        /* border: 1px solid #000; */
+      }
+      li.item {
+        float: left;
+        margin-right: 5px;
+        width: 150px;
+        height: 50px;
+        background: #ddd;
+        overflow: hidden;
+        transform: skew(-30deg);
+      }
+      li.item:last-child {
+        margin-right: 0;
+      }
+      li.item dt,
+      li.item dd {
+        cursor: pointer;
+        height: 50px;
+        /* line-height: 50px; */
+      }
+      li.item span {
+        display: block;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        transform: skew(30deg);
+      }
+      li.item dt span {
+        color: #000;
+      }
+      li.item dd {
+        position: relative;
+        top: 0;
+        background: #000;
+        transition: top 500ms ease-in-out;
+      }
+      li.item:hover dd{
+        top: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav">
+        <li class="item">
+          <dl>
+            <dt><span>首页</span></dt>
+            <dd><span>Home</span></dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt><span>产品展示</span></dt>
+            <dd><span>Prodocts</span></dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt><span>精品案例</span></dt>
+            <dd><span>Case</span></dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt><span>常见问题</span></dt>
+            <dd><span>Faq</span></dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt><span>新闻中心</span></dt>
+            <dd><span>News</span></dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt><span>关于我们</span></dt>
+            <dd><span>About us</span></dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt><span>联系我们</span></dt>
+            <dd><span>Concat us</span></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

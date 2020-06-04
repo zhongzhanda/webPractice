@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>googleMenu</title>
+    <link rel="stylesheet" href="../../base.css" />
+    <script>
+      
+    </script>
+    <style>
+      .container {
+        width: 200px;
+      }
+      li:nth-child(1) {
+        background: #b3c833;
+      }
+      li:nth-child(2) {
+        background: #ce5043;
+      }
+      li:nth-child(3) {
+        background: #fb8521;
+      }
+      li:nth-child(4) {
+        background: #1aa1e1;
+      }
+      li:nth-child(5) {
+        background: #5e5ca6;
+      }
+      li:nth-child(6) {
+        background: #658092;
+      }
+      dl {
+        /* width: 200px; */
+        height: 50px;
+      }
+      dt, dd{
+        float: left;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+      dd {
+        width: 150px;
+      }
+      dt > img {
+        vertical-align: middle;
+      }
+      a {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: 150px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+      }
+      a:hover {
+        color: #fff;
+      }
+      dd {
+        position: relative;
+      }
+      div.mask {
+        position: absolute;
+        /* z-index: 0; */
+        right: 0;
+        top: 0;
+        width: 150px;
+        height: 50px;
+        background: #fff;
+      }
+      li:hover div.mask {
+        right: -100%;
+        transition: right 500ms linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="menu">
+        <li class="item">
+          <dl class="clearfix">
+            <dt><img src="images/icoa1.png" alt=""></dt>
+            <dd>
+              <div class="mask"></div>
+              <a href="#">首页</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl class="clearfix">
+            <dt><img src="images/icoa2.png" alt=""></dt>
+            <dd>
+              <div class="mask"></div>
+              <a href="#">影视</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl class="clearfix">
+            <dt><img src="images/icoa3.png" alt=""></dt>
+            <dd>
+              <div class="mask"></div>
+              <a href="#">音乐</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl class="clearfix">
+            <dt><img src="images/icoa4.png" alt=""></dt>
+            <dd>
+              <div class="mask"></div>
+              <a href="#">图书</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl class="clearfix">
+            <dt><img src="images/icoa5.png" alt=""></dt>
+            <dd>
+              <div class="mask"></div>
+              <a href="#">记事</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl class="clearfix">
+            <dt><img src="images/icoa6.png" alt=""></dt>
+            <dd>
+              <div class="mask"></div>
+              <a href="#">设备</a>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

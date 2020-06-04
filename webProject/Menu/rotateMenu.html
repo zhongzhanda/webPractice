@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>旋转菜单</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script>
+      
+    </script>
+    <style>
+      li {
+        cursor: pointer;
+      }
+      li:hover {
+        background: #000;
+      }
+      ul.nav {
+        margin: 20px auto;
+        width: 1056px;
+      }
+      li.item {
+        float: left;
+        border-right: 1px solid #000;
+        width: 150px;
+        height: 40px;
+        color: #fff;
+      }
+      li.item dt {
+        line-height: 40px;
+        text-align: center;
+        background: #555;
+      }
+      .second-nav {
+        display: none;
+      }
+      ul.second-nav li {
+        margin-top: 2px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        background: rgba(32, 32, 32, .5);
+      }
+      li.item:last-child {
+        border-right: none;
+      }
+      li.item:hover .second-nav {
+        display: block;
+        animation: rotate 500ms linear;
+      }
+      @keyframes rotate{
+        0% {
+          opacity: 0;
+          trnasform: rotate(0deg);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(-360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav">
+        <li class="item">
+          <dl>
+            <dt>前端设计</dt>
+            <dd>
+              <ul class="second-nav">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt>网页设计</dt>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt>动画设计</dt>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt>编程语言</dt>
+            <dd>
+              <ul class="second-nav">
+                <li>PHP</li>
+                <li>Java</li>
+                <li>Wordpress</li>
+                <li>CodeIngnit</li>
+              </ul>
+            </dd>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt>手机开发</dt>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt>开源程序</dt>
+          </dl>
+        </li>
+        <li class="item">
+          <dl>
+            <dt>我的博客</dt>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

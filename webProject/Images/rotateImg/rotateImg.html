@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>rotateImg</title>
+  <link rel="stylesheet" href="../../base.css" />
+  <script>
+
+  </script>
+  <style>
+    ul.rotate::before,
+    ul.rotate::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    ul.rotate {
+      margin: 40px auto;
+      padding: 10px;
+    }
+
+    ul.rotate>li {
+      cursor: pointer;
+      float: left;
+      margin: 5px;
+      border: 5px solid #fff;
+      box-shadow: 0 0 3px #666;
+      width: 315px;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    ul.rotate div.box {
+      /* height: 560px; */
+      transition: transform 500ms ease-in-out;
+    }
+
+    ul.rotate img {
+      display: block;
+    }
+
+    div.info {
+      height: 280px;
+      color: #fff;
+      background: #000;
+    }
+
+    div.info>p {
+      font-size: 12px;
+    }
+
+    ul.rotate2d div.info {
+      transform: rotate(180deg);
+    }
+
+    ul.rotate2d li:hover div.box {
+      transform: rotate(180deg);
+    }
+
+    ul.rotate3d_1 div.info {
+      transform: rotateX(180deg);
+    }
+
+    ul.rotate3d_1 li:hover div.box {
+      transform: rotateX(180deg);
+    }
+
+
+    ul.rotate3d_2 div.box {
+      height: 280px;
+      transform-style: preserve-3d;
+    } 
+    ul.rotate3d_2 div.info {
+      transform: translateZ(-1px) translateY(-280px) rotateX(180deg);
+    }
+    ul.rotate3d_2 li:hover div.box {
+      transform: rotateX(180deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="rotate rotate2d">
+      <li>
+        <div class="box">
+          <div class="img"><img src="img/1.jpg" alt=""></div>
+          <div class="info">
+            <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+            <p>
+              2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="box">
+          <div class="img"><img src="img/2.jpg" alt=""></div>
+          <div class="info">
+            <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+            <p>
+              2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="box">
+          <div class="img"><img src="img/3.jpg" alt=""></div>
+          <div class="info">
+            <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+            <p>
+              2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <h2>3d翻转1</h2>
+    <div class="container">
+      <ul class="rotate rotate3d_1">
+        <li>
+          <div class="box">
+            <div class="img"><img src="img/1.jpg" alt=""></div>
+            <div class="info">
+              <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+              <p>
+                2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <div class="img"><img src="img/2.jpg" alt=""></div>
+            <div class="info">
+              <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+              <p>
+                2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <div class="img"><img src="img/3.jpg" alt=""></div>
+            <div class="info">
+              <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+              <p>
+                2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <h2>3d翻转2</h2>
+    <div class="container">
+      <ul class="rotate rotate3d_2">
+        <li>
+          <div class="box">
+            <div class="img"><img src="img/1.jpg" alt=""></div>
+            <div class="info">
+              <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+              <p>
+                2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <div class="img"><img src="img/2.jpg" alt=""></div>
+            <div class="info">
+              <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+              <p>
+                2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <div class="img"><img src="img/3.jpg" alt=""></div>
+            <div class="info">
+              <h5>曝韦德愿做牺牲降薪留队 跳出合同4年5000万续约</h5>
+              <p>
+                2010年夏天，韦德同热火签下一份为期六年价值1.08亿美元的合同，目前还剩两年到期，价值4150万。这份合同的最后两年，韦德分别拥有一个跳出条款，可以提前恢复自由身。而韦德正打算利用这一条款结束当前合同，与球队重签一份为期4年，总价值在5000万到5500万之间的新合同。...
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="test">
+    <div class="test">test</div>
+  </div>
+  <style>
+    #test {
+      width: 1000px;
+      height: 1000px;
+      border: 2px solid #000;
+    }
+    .test {
+      margin: 100px;
+      width: 100px;
+      height: 100px;
+      background: #f00;
+      transform: rotateX(180deg);
+      transform-origin: center top;
+      transition: transform 500ms;
+    }
+    .test:hover {
+      transform: rotateX(0deg);
+    }
+  </style>
+</body>
+
+</html>

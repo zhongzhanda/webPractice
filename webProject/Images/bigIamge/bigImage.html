@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>bigImage</title>
+		<link rel="stylesheet" href="../../base.css" />
+		<script src="../../base.js"></script>
+		<script>
+			window.onload = function () {
+				var img = $(".small"),
+						sDiv = $(".show"),
+						x = img.clientWidth,
+						y = img.clientHeight,
+						xl = x * 150 / 1200,
+						xr = x - x * 150  / 1200,
+						yt = y * 150 / 799,
+						yb = y - y * 150 / 799;
+
+
+				img.onmouseenter = function (e) {
+					sDiv.style.backgroundImage = "url('images/1.jpeg')";
+					img.onmousemove = function (e) {
+						let delX = window.scrollX + e.clientX - this.offsetLeft - this.clientLeft,
+								delY = window.scrollY + e.clientY - this.offsetTop - this.clientTop;
+						(delX < xl) && (delX = xl);
+						(delX > xr) && (delX = xr);
+						(delY < yt) && (delY = yt);
+						(delY > yb) && (delY = yb);
+						
+						sDiv.style.backgroundPosition = (- 1200 * delX / x + 150) + "px " + (-799 * delY / y + 150) + "px";
+					};
+				};
+
+				img.onmouseleave = function () {
+					// img.onmouseenter = null;
+					img.onmousemove = null;
+					sDiv.style.backgroundImage = "";
+					sDiv.style.backgroundPosition = "";
+					// img.onmouseleave = null;
+				};
+			};
+		</script>
+		<style>
+			img.small {
+				display: inline-block;
+				border: 1px solid #000;
+				width: 400px;
+				height: 300px;
+			}
+			div.show {
+				display: inline-block;
+				margin-left: 100px;
+				border: 1px solid #000;
+				width: 300px;
+				height: 300px;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<img class="small" src="images/1.jpeg" alt="" />
+			<div class="show"></div>
+		</div>
+	</body>
+</html>

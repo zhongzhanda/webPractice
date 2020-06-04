@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>M4images</title>
+		<link rel="stylesheet" href="../../base.css" />
+		<script src="../../base.js"></script>
+		<script>
+			window.onload = function () {
+				var lDiv = $(".left"),
+						sDiv = $(".split"),
+						oCon = $(".container");
+				oCon.onmouseover = function (e) {
+					// 鼠标在元素中的位置
+					// 屏幕X滚动轴的位置 + 鼠标在屏幕的位置 - 元素距离屏幕左边的位置 - 元素边框的宽度 + 元素X轴滚动的位置
+					// 这里没用到滚动的距离
+					var left = window.scrollX + e.clientX - this.clientLeft - this.offsetLeft;
+					lDiv.style.width = left + "px";
+					oCon.onmousemove = function (e) {
+						var left = window.scrollX + e.clientX - this.clientLeft - this.offsetLeft;
+						lDiv.style.width = left + "px";
+					};
+				};
+
+				oCon.onmouseout = function (e) {
+					oCon.onmousemove = null;
+					oCon.onmouseenter = null;
+					lDiv.style.width = "426px";
+					oCon.ommouseleave = null;
+				};
+			};
+		</script>
+		<style>
+			div.wrap {
+				margin: 50px auto;
+				width: 882px;
+			}
+			div.container {
+				border: 10px solid #0ff;
+				width: 862px;
+				height: 515px;
+				display: flex;
+			}
+			div.left {
+				width: 426px;
+				background: url("img/1.jpg");
+				background-repeat: no-repeat;
+			}
+			div.split {
+				width: 10px;
+				background: #f66;
+			}
+			div.right {
+				flex: 1;
+				background: url("img/2.jpg");
+				background-position: right;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="container">
+				<div class="left"></div>
+				<div class="split"></div>
+				<div class="right"></div>
+			</div>
+		</div>
+	</body>
+</html>

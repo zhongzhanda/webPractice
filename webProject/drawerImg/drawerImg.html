@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script>
+      
+    </script>
+    <style>
+      .container {
+        margin: 40px auto;
+        width: 300px;
+      }
+      .container li {
+        margin-bottom: 3px;
+        height: 40px;
+        overflow: hidden;
+        transition: height 300ms ease;
+      }
+      .container li:first-child {
+        height: 240px;
+      }
+      .container:hover li {
+        height: 40px;
+      }
+      .container li:hover {
+        height: 240px;
+      }
+      .container li:hover p.text {
+        color: #fff;
+        background: #f69;
+      }
+      .container p.text {
+        line-height: 40px;
+        padding: 0 40px;
+        background: grey;
+      }
+      .container p.img {
+        height: 200px;
+        background: #099;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>
+        <p class="text">xxx</p>
+        <p class="img"><img src="" alt=""></p>
+      </li>
+      <li>
+        <p class="text">xxx</p>
+        <p class="img"><img src="" alt=""></p>
+      </li>
+      <li>
+        <p class="text">xxx</p>
+        <p class="img"><img src="" alt=""></p>
+      </li>
+      <li>
+        <p class="text">xxx</p>
+        <p class="img"><img src="" alt=""></p>
+      </li>
+      <li>
+        <p class="text">xxx</p>
+        <p class="img"><img src="" alt=""></p>
+      </li>
+    </ul>
+  </body>
+</html>

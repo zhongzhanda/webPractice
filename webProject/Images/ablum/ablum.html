@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ablum</title>
+    <link rel="stylesheet" href="../../base.css" />
+    <script src="../../base.js"></script>
+    <script>
+      function Ablum (element) {
+        this.init(element);
+      };
+      Ablum.prototype = {
+        init: function (element) {
+          let oThis = this;
+          this.container = element;
+          this.ablum = this.container.$(".ablum");
+          this.ablumList = this.ablum.$$("img");
+          this.length = this.ablumList.length;
+          this.index = 0;
+          this.mask = this.container.$(".mask");
+          this.show = this.mask.$(".show");
+
+          // 给相册的小图添加索引，以便后面点击事件时使用
+          // 事先缓存大图，以便后面点击时能够直接显示大图，省去缓冲加载的时间
+          for (let i = 0; i < this.length; i++) {
+            this.ablumList[i].index = i;
+            let img = new Image();
+            img.src = "images/big" + (i + 1) + ".jpg";
+          }
+
+          this.ablum.onclick = function (e) {
+            let img = e.target;
+            if (img.tagName === "IMG") {
+              oThis.index = img.index;
+              oThis.show.src = "images/big" + (oThis.index + 1) + ".jpg";
+              oThis.mask.style.display = "block";
+            }
+          };
+          
+          this.mask.onclick = function (e) {
+            let oC = e.target.className;
+            if (oC === "dirl") {
+              oThis.index--;
+              oThis.index === -1 && (oThis.index = oThis.length - 1);
+              oThis.show.src = "images/big" + (oThis.index + 1) + ".jpg";
+            } else if (oC === "dirr") {
+              oThis.index++;
+              oThis.index === oThis.length && (oThis.index = 0);
+              oThis.show.src = "images/big" + (oThis.index + 1) + ".jpg";
+            } else if (oC === "mask") {
+              oThis.mask.style.display = "none";
+            } else {
+              return ;
+            }
+          };
+        },
+      };
+
+      window.onload = function () {
+        var oCon = $(".ablum-container");
+        
+        new Ablum(oCon);
+      };
+    </script>
+    <style>
+      ul.ablum {
+        margin: 20px auto;
+        width: 984px;
+      }
+      ul.ablum li{
+        float: left;
+        margin: 10px 20px;
+        box-shadow: 2px 2px 5px #333;
+      }
+      ul.ablum li img {
+        cursor: pointer;
+        vertical-align: middle;
+      }
+      div.ablum-container div.mask {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        line-height: 100vh;
+        vertical-align: middle;
+        text-align: center;
+        background: rgba(44, 44, 44, .7)
+      }
+      div.ablum-container div.mask img {
+        margin: auto 20px;
+        vertical-align: middle;
+      }
+      div.ablum-container img.dirl,
+      div.ablum-container img.dirr {
+        cursor: pointer;
+      }
+      div.ablum-container img.show {
+        border: 10px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ablum-container">
+      <ul class="ablum clearfix">
+        <li><img src="images/s1.jpg" alt="" /></li>
+        <li><img src="images/s2.jpg" alt="" /></li>
+        <li><img src="images/s3.jpg" alt="" /></li>
+        <li><img src="images/s4.jpg" alt="" /></li>
+        <li><img src="images/s5.jpg" alt="" /></li>
+        <li><img src="images/s6.jpg" alt="" /></li>
+        <li><img src="images/s7.jpg" alt="" /></li>
+        <li><img src="images/s8.jpg" alt="" /></li>
+        <li><img src="images/s9.jpg" alt="" /></li>
+      </ul>
+      <div class="mask"><img class="dirl" src="images/dirl.png" alt="" /><img class="show" src="" alt="" /><img class="dirr" src="images/dirr.png" alt="" /></div>
+    </div>
+  </body>
+</html>

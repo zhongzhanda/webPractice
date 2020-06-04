@@ -1,0 +1,36 @@
+.carousel {
+  display: relative;
+  overflow: hidden;
+}
+.carousel .img-list {
+  position: relative;
+  font-size: 0;
+}
+.carousel .img-list li {
+  display: inline-block;
+  width: 590px;
+}
+.carousel .img-list img {
+  display: block;
+  width: 590px;
+  height: 250px;
+}
+.carousel .trigger {
+  height: 40px;
+  text-align: center;
+  font-size: 0;
+}
+.carousel .trigger li {
+  display: inline-block;
+  margin-right: 6px;
+  border-radius: 6px;
+  width: 12px;
+  height: 12px;
+  background: #f00;
+}
+.carousel .trigger li:last-child {
+  margin-right: 0;
+}
+.carousel .trigger li.active {
+  background: #00f;
+}

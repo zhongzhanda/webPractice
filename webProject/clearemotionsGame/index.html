@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>鼠标点击小游戏</title>
+    <link rel="stylesheet" href="../base.css" />
+    <script src="../base.js"></script>
+    <script src="index.js"></script>
+    <style>
+      @keyframes u2d-shake {
+        0% {
+          position: relative;
+          top: -100px;
+          bottom: 100px;
+        }
+        10% {
+          position: relative;
+          top: 100px;
+          bottom: -100px;
+        }
+        20% {
+          position: relative;
+          top: -100px;
+          bottom: 100px;
+        }
+        30% {
+          position: relative;
+          top: 100px;
+          bottom: -100px;
+        }
+        40% {
+          position: relative;
+          top: -100px;
+          bottom: 100px;
+        }
+        50% {
+          position: relative;
+          top: 100px;
+          bottom: -100px;
+        }
+        60% {
+          position: relative;
+          top: -100px;
+          bottom: 100px;
+        }
+        70% {
+          position: relative;
+          top: 100px;
+          bottom: -100px;
+        }
+        80% {
+          position: relative;
+          top: -100px;
+          bottom: 100px;
+        }
+        90% {
+          position: relative;
+          top: 100px;
+          bottom: -100px;
+        }
+        100% {
+          position: relative;
+          top: -100px;
+          bottom: 100px;
+        }
+      }
+      .wrap {
+        margin: 40px auto;
+        width: 1000px;
+      }
+      .container > p {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .container > p > button {
+        width: 200px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        background: #d04;
+      }
+      .content {
+        border: 10px solid #000;
+      }
+      .content .score {
+        padding: 20px;
+        float: left;
+        width: 118px;
+      }
+      .content .game-content {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        border-left: 2px solid #000;
+        width: 800px;
+        height: 600px;
+      }
+      .content .game-content img {
+        position: absolute;
+        cursor: pointer;
+        display: block;
+      }
+      .content.shake {
+        animation: u2d-shake 1s;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="container">
+        <p><button>开始游戏</button></p>
+        <div class="content clearfix">
+          <div class="score">
+            <p>得分： <span class="goal">0</span>分</p>
+            <p>失分： <span class="lose-score">0</span>分</p>
+          </div>
+          <div class="game-content"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>adImages</title>
+    <link rel="stylesheet" href="../../base.css" />
+    <script>
+      
+    </script>
+    <style>
+      .content {
+        position: relative;
+        margin: 50px auto;
+        border: 5px solid #000;
+        width: 948px;
+        height: 260px;
+      }
+      .content input {
+        display: none;
+      }
+      .content .lfr {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 260px;
+        background: rgba(100, 100, 100, .7)
+      }
+      .content label {
+        display: block;
+        height: 65px;
+      }
+      .content dl {
+        padding: 10px;
+        height: 41px;
+      }
+      .content dd {
+        float: left;
+        width: 40px;
+        height: 41px; 
+      }
+      .content dd img {
+        width: 40px;
+        height: 40px;
+      }
+      .content dt {
+        float: right;
+        padding-left: 20px;
+        width: 180px;
+        line-height: 20px;
+        font-size: 12px;
+        color: #fff;
+      }
+      .content dt:first-child {
+        font-size: 14px;
+      }
+      .content .pics img {
+        display: block;
+        height: 0;
+        transition: height 500ms linear;
+      }
+      #radio1:checked ~ div.lfr #label1 {background: rgba(0, 0, 0, .5)}
+      #radio2:checked ~ div.lfr #label2 {background: rgba(0, 0, 0, .5)}
+      #radio3:checked ~ div.lfr #label3 {background: rgba(0, 0, 0, .5)}
+      #radio4:checked ~ div.lfr #label4 {background: rgba(0, 0, 0, .5)}
+
+      #radio1:checked ~ div.pics #img1 {height: 260px;}
+      #radio2:checked ~ div.pics #img2 {height: 260px;}
+      #radio3:checked ~ div.pics #img3 {height: 260px;}
+      #radio4:checked ~ div.pics #img4 {height: 260px;}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <input type="radio" name="ads" id="radio1" checked>
+        <input type="radio" name="ads" id="radio2">
+        <input type="radio" name="ads" id="radio3">
+        <input type="radio" name="ads" id="radio4">
+        <!-- <div class="radios">
+        </div>  -->
+        <div class="lfr">
+          <label for="radio1" id="label1">
+            <dl>
+              <dd>
+                <img src="images/but1.png" alt="">
+              </dd>
+              <dt>精心挑选，倾情推荐</dt>
+              <dt>推荐精品应用，享受多彩上网</dt>
+            </dl>
+          </label>
+          <label for="radio2" id="label2">
+            <dl>
+              <dd>
+                <img src="images/but2.png" alt="">
+              </dd>
+              <dt>精心挑选，倾情推荐</dt>
+              <dt>推荐精品应用，享受多彩上网</dt>
+            </dl>
+          </label>
+          <label for="radio3" id="label3">
+            <dl>
+              <dd>
+                <img src="images/but3.png" alt="">
+              </dd>
+              <dt>精心挑选，倾情推荐</dt>
+              <dt>推荐精品应用，享受多彩上网</dt>
+            </dl>
+          </label>
+          <label for="radio4" id="label4">
+            <dl>
+              <dd>
+                <img src="images/but4.png" alt="">
+              </dd>
+              <dt>精心挑选，倾情推荐</dt>
+              <dt>推荐精品应用，享受多彩上网</dt>
+            </dl>
+          </label>
+        </div>
+        <div class="pics">
+          <img src="images/1.png" alt="" id="img1" class="def">
+          <img src="images/2.png" alt="" id="img2" class="def">
+          <img src="images/3.png" alt="" id="img3" class="def">
+          <img src="images/4.png" alt="" id="img4" class="def">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
