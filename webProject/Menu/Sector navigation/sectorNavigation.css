@@ -1,0 +1,45 @@
+dl.nav {
+  position: fixed;
+  right: 50px;
+  bottom: 50px; }
+  dl.nav img {
+    display: block;
+    transition: transform 500ms ease-in-out; }
+  dl.nav dd {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: transform 500ms ease-in-out; }
+  dl.nav dd.refresh img {
+    transform: rotate(0); }
+  dl.nav dd.prev img {
+    transform: rotate(-22.5deg); }
+  dl.nav dd.open img {
+    transform: rotate(-45deg); }
+  dl.nav dd.full img {
+    transform: rotate(-67.5deg); }
+  dl.nav dd.clos img {
+    transform: rotate(-90deg); }
+  dl.nav dt.home:hover ~ dd.refresh {
+    transform: rotate(0) translateX(-200px); }
+    dl.nav dt.home:hover ~ dd.refresh img {
+      transform: rotate(-720deg); }
+  dl.nav dt.home:hover ~ dd.prev {
+    transform: rotate(22.5deg) translateX(-200px); }
+    dl.nav dt.home:hover ~ dd.prev img {
+      transform: rotate(-742.5deg); }
+  dl.nav dt.home:hover ~ dd.open {
+    transform: rotate(45deg) translateX(-200px); }
+    dl.nav dt.home:hover ~ dd.open img {
+      transform: rotate(-765deg); }
+  dl.nav dt.home:hover ~ dd.full {
+    transform: rotate(67.5deg) translateX(-200px); }
+    dl.nav dt.home:hover ~ dd.full img {
+      transform: rotate(-787.5deg); }
+  dl.nav dt.home:hover ~ dd.clos {
+    transform: rotate(90deg) translateX(-200px); }
+    dl.nav dt.home:hover ~ dd.clos img {
+      transform: rotate(-810deg); }
+
+/*# sourceMappingURL=sectorNavigation.css.map */
